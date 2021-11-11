@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+ <v-app>
   <v-navigation-drawer app></v-navigation-drawer> 
   <v-app-bar app dark color="primary">
     <v-app-bar-nav-icon></v-app-bar-nav-icon>
@@ -17,7 +17,9 @@
 </template>
 
 <script>
+
+
 export default {
- 
+  
 }
 </script>
