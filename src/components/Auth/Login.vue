@@ -1,7 +1,7 @@
 <template> 
 	<v-container fluid fill-height>
 		<v-layout align-center justify-center> 
-			<v-flex xs12 sm8 md8>
+			<v-flex xs12 sm8 md8>1
 			<v-card class="elevetion-12">
 				<v-toolbar dark color="primary">
 Login
@@ -10,13 +10,16 @@ Login
 					<v-form>
 					<v-text-field
 						prepend-icon="mdi-account" 							name="email" 
-type="email">
+               			label="Email" 
+type="email" 
+v-model="email" >
 					</v-text-field>
 					<v-text-field
 prepend-icon="mdi-lock" 
 name="password" 
 label="Password" 
-type="password">
+type="password" 
+v-model="password" >
 </v-text-field>
 					</v-form> 
 				</v-card-text>
@@ -33,6 +36,8 @@ type="password">
 export default {
 	data () { 
 		return {
+email: "",
+	password: ""
 		} 	
 	}
 } 
