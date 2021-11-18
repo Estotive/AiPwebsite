@@ -25,6 +25,14 @@
 					v-model="password"
 					:rules="passwordRules" 
 					></v-text-field>
+					<v-text-field  
+					prepend-icon="mdi-lock" 
+					name="confirm-password" 
+					label="Confirm Password" 
+					type="password" 
+					v-model="confirmPassword"
+					:rules="confirmPasswordRules" 
+					></v-text-field>
 					</v-form> 
 				</v-card-text>
 				<v-card-actions>
@@ -48,16 +56,21 @@ export default {
 		return {
 			email: "",
 			password: "",
+			confirmPassword: "",
 			valid: false,
 			emailRules: [
 			v => !!v || 'E-mail is required',
-			v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+        	v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
 			],
 			passwordRules: [
-			v => !!v || 'Password is required',
-			v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'
-			]
-		}	
+	        v => !!v || 'Password is required',
+	        v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'
+	        ],
+	        confirmPasswordRules: [
+	        v => !!v || 'Password is required',
+	        v => v === this.password || 'Password should match'
+	        ]
+		} 	
 	},
 	methods: {
 		onSubmit(){
@@ -70,5 +83,5 @@ export default {
 			}
 		}
 	}
-}
+} 
 </script>
