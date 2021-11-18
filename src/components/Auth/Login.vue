@@ -1,7 +1,7 @@
 <template> 
 	<v-container fluid fill-height>
 		<v-layout align-center justify-center> 
-			<v-flex xs12 sm8 md8>1
+			<v-flex xs12 sm8 md8>
 			<v-card class="elevetion-12">
 				<v-toolbar dark color="primary">
 Login
