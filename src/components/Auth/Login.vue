@@ -10,7 +10,7 @@ Login
 					<v-form>
 					<v-text-field
 						prepend-icon="mdi-account" 							name="email" 
-               			label="Email" 
+						label="Email" 
 type="email" 
 v-model="email" >
 					</v-text-field>
