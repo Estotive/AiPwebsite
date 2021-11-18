@@ -9,7 +9,7 @@
 					</v-toolbar>
 					<v-card-text>
 					<v-form v-model="valid" ref="form"
- 					validation>
+						validation>
 						<v-text-field
 							prepend-icon="mdi-account" 
 							name="email" 
