@@ -7,7 +7,7 @@
 				<v-toolbar-title>Registration</v-toolbar-title>
 			</v-toolbar>
 				<v-card-text>
-					<v-form v-model="valid" ref="form" validation>
+					<v-form v-model="valid" ref="form" lazy-validation>
 					<v-text-field
 					prepend-icon="mdi-account" 
 					name="email" 
@@ -64,7 +64,7 @@ export default {
 			],
 			passwordRules: [
 			v => !!v || 'Password is required',
-			 v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'
+			v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'
 			],
 			confirmPasswordRules: [
 			v => !!v || 'Password is required',
