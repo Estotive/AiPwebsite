@@ -1,10 +1,10 @@
-<template> 
-<div>
+<template>
+    <div>
         <v-container fluid>
             <v-layout row> 
                 <v-flex xs12>
                     <v-carousel>
-						<v-carousel-item
+                        <v-carousel-item
                         v-for="ad in promoAds"
                         :key="ad.id"
                         :src="ad.src"
@@ -27,7 +27,7 @@
                 >
                     <v-card>
                         <v-img
-						:src="ad.src"
+                        :src="ad.src"
                         height="200px"
                         ></v-img>
                         <v-card-title primary-title>
@@ -40,7 +40,7 @@
                         </v-card-title>
                         <v-card-actions>
                         <v-spacer></v-spacer>
-						<v-btn text :to="'/ad/'+ad.id">
+                        <v-btn text :to="'/ad/'+ad.id">
                             Open</v-btn>
                         <v-btn raised color="primary">
                             Buy
@@ -50,19 +50,20 @@
                     </v-flex>
             </v-layout> 
         </v-container>
-        </div>
+        </div>    
 </template>
+
 <script>
 export default {
-  computed:  { 
-	promoAds() {
-		return this.$store.getters.promoAds
-	},
-	ads() {
-		return this.$store.getters.ads
-		}	
-  }
-} 
+    computed:  {
+        promoAds() {
+                return this.$store.getters.promoAds
+        },
+        ads() {
+                return this.$store.getters.ads
+        }
+    }
+}
 </script>
 
 <style scoped>
