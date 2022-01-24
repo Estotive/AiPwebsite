@@ -29,7 +29,7 @@ export default {
 		loading (state) {
 			return state.loading
 		},
-		error (state) {
+			error (state) {
 			return state.error
 		}
 	}
