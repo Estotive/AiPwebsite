@@ -6,11 +6,12 @@ class User {
     }
 }
 
+
 export default {
-	state: {
+    state: {
         user: null
     },
-    mutations: {
+	mutations: {
         setUser(state,payload) {
             state.user = payload
         }    
@@ -20,7 +21,7 @@ export default {
             commit('clearError')
             commit('setLoading', true)
             try {
-                const response = await fb.auth().createUserWithEmailAndPassword(email,password)
+        const response = await fb.auth().createUserWithEmailAndPassword(email,password)
                 commit('setUser', new User(response.user.uid))
                 commit('setLoading', false)
             } catch (error) {
@@ -41,11 +42,18 @@ export default {
                 commit('setError', error.message)
         throw error
             }
-        }
+        },
+        logoutUser ({commit}) {
+            fb.auth().signOut()
+                commit('setUser', null)
+            }            
     },
 	getters: {
         user(state) {
             return state.user
-        }
+        },
+        isUserLoggedIn (state) {
+            return state.user !== null
+        }        
     }
 }
